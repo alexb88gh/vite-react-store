@@ -1,12 +1,12 @@
-import { createBrowserRouter } from "react-router-dom";
-import { MainLayout } from "@/app/layouts/main";
-import { CatalogPage } from "@/pages/catalog";
-import { ProductPage } from "@/pages/product";
-import { CartPage } from "@/pages/cart";
+import { MainLayout } from '@/app/layouts/main'
+import { CartPage } from '@/pages/cart'
+import { CatalogPage } from '@/pages/catalog'
+import { ProductPage } from '@/pages/product'
+import { createBrowserRouter } from 'react-router-dom'
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <MainLayout />,
     children: [
       {
@@ -14,13 +14,13 @@ export const router = createBrowserRouter([
         element: <CatalogPage />,
       },
       {
-        path: "/product/:id",
+        path: '/product/:id',
         element: <ProductPage />,
       },
       {
-        path: "/cart",
+        path: '/cart',
         element: <CartPage />,
       },
     ],
   },
-]);
+])

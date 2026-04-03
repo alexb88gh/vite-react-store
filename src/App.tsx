@@ -1,7 +1,7 @@
-import { RoutersProvider } from "@/app/providers/RoutersProvider";
+import { RoutersProvider } from '@/app/providers/RoutersProvider'
 
 const App = () => {
-  return <RoutersProvider />;
-};
+  return <RoutersProvider />
+}
 
-export default App;
+export default App
