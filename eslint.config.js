@@ -20,4 +20,124 @@ export default defineConfig([
       globals: globals.browser,
     },
   },
+  {
+    files: ['src/pages/**/*.{ts,tsx}'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['@/app/**', '**/app/**'],
+              message: '`pages` cannot import from `app`.',
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    files: ['src/widgets/**/*.{ts,tsx}'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['@/app/**', '**/app/**'],
+              message: '`widgets` cannot import from `app`.',
+            },
+            {
+              group: ['@/pages/**', '**/pages/**'],
+              message: '`widgets` cannot import from `pages`.',
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    files: ['src/features/**/*.{ts,tsx}'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['@/app/**', '**/app/**'],
+              message: '`features` cannot import from `app`.',
+            },
+            {
+              group: ['@/pages/**', '**/pages/**'],
+              message: '`features` cannot import from `pages`.',
+            },
+            {
+              group: ['@/widgets/**', '**/widgets/**'],
+              message: '`features` cannot import from `widgets`.',
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    files: ['src/entities/**/*.{ts,tsx}'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['@/app/**', '**/app/**'],
+              message: '`entities` cannot import from `app`.',
+            },
+            {
+              group: ['@/pages/**', '**/pages/**'],
+              message: '`entities` cannot import from `pages`.',
+            },
+            {
+              group: ['@/widgets/**', '**/widgets/**'],
+              message: '`entities` cannot import from `widgets`.',
+            },
+            {
+              group: ['@/features/**', '**/features/**'],
+              message: '`entities` cannot import from `features`.',
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    files: ['src/shared/**/*.{ts,tsx}'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['@/app/**', '**/app/**'],
+              message: '`shared` cannot import from `app`.',
+            },
+            {
+              group: ['@/pages/**', '**/pages/**'],
+              message: '`shared` cannot import from `pages`.',
+            },
+            {
+              group: ['@/widgets/**', '**/widgets/**'],
+              message: '`shared` cannot import from `widgets`.',
+            },
+            {
+              group: ['@/features/**', '**/features/**'],
+              message: '`shared` cannot import from `features`.',
+            },
+            {
+              group: ['@/entities/**', '**/entities/**'],
+              message: '`shared` cannot import from `entities`.',
+            },
+          ],
+        },
+      ],
+    },
+  },
 ])
