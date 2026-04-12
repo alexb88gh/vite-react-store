@@ -1,9 +1,10 @@
 import { Outlet } from 'react-router-dom'
+import { Header } from './header'
 
 export const MainLayout = () => {
   return (
     <div className="min-h-screen">
-      <header className="border-b p-4">Demo Store</header>
+      <Header />
 
       <main className="p-4">
         <Outlet />
