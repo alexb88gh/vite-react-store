@@ -3,7 +3,7 @@ import clsx from 'clsx'
 
 import logo from '@/assets/logo.png'
 
-import { topMenu } from './top-menu'
+import { mainMenu, topMenu } from './menus'
 
 import { ProductSearch } from '@/features/product-search'
 
@@ -44,7 +44,7 @@ export const Header = () => {
           </div>
         </div>
       </Container>
-      <hr className="text-neutral-100"></hr>
+      <hr className="text-neutral-200"></hr>
       <Container>
         <div className="flex justify-between items-center gap-10 py-2 border-b border-b-neutral-100">
           <div className="max-w-40">
@@ -60,7 +60,23 @@ export const Header = () => {
             <div>Middle menu</div>
           </div>
         </div>
-        <div></div>
+        <div>
+          {' '}
+          <nav aria-label="Top navigation">
+            <ul className="flex justify-start gap-5">
+              {mainMenu.map((item) => (
+                <li key={item.title}>
+                  <a
+                    href="#"
+                    className="block uppercase py-4 border-t-3 border-transparent text-[12px] font-bold text-neutral-600 hover:border-sky-600 hover:text-sky-600 transition duration-300 focus-visible:text-sky-600"
+                  >
+                    {item.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
       </Container>
     </header>
   )
