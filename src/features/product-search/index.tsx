@@ -5,28 +5,45 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 
 export const ProductSearch = () => {
   return (
-    <div className="flex">
-      <Input
-        id="search"
-        name="search"
-        className={cn(
-          'h-10 rounded-[15px] rounded-br-none rounded-tr-none rounded-br-0 bg-zinc-100 border-0 focus:border-0 focus-visible:shadow-none focus-visible:ring-0 border-r border-r-white',
-        )}
-      />
-      <Select>
-        <SelectTrigger className="h-10 bg-zinc-100 rounded-none shadow-none border-0 focus-visible:shadow-none focus-visible:ring-0 border-r border-r-white">
-          <SelectValue placeholder="Sort by" />
-        </SelectTrigger>
-        <SelectContent className="bg-white">
-          <SelectItem value="title-asc">Title A-Z</SelectItem>
-          <SelectItem value="title-desc">Title Z-A</SelectItem>
-          <SelectItem value="price-asc">Price low to high</SelectItem>
-          <SelectItem value="price-desc">Price high to low</SelectItem>
-        </SelectContent>
-      </Select>
-      <Button className="h-10 bg-zinc-100 border-0 rounded-none rounded-tr-[15px] rounded-br-[15px] cursor-pointer">
-        <i className="fa-solid fa-magnifying-glass"></i>
-      </Button>
+    <div className="w-full">
+      <form role="search" className="flex w-full">
+        <Input
+          id="search"
+          name="search"
+          aria-label="Search products"
+          className={cn(
+            'h-10 rounded-[22px] rounded-br-none rounded-tr-none rounded-br-0',
+            'bg-zinc-100 border-0 focus-visible:shadow-none focus-visible:ring-0',
+            'border-r border-r-white',
+          )}
+        />
+        <Select>
+          <SelectTrigger
+            className={cn(
+              'h-10 max-w-37.5 bg-zinc-100',
+              'rounded-none shadow-none border-0 focus-visible:shadow-none',
+              'focus-visible:ring-0 border-r border-r-white',
+            )}
+          >
+            <SelectValue placeholder="Sort by" />
+          </SelectTrigger>
+          <SelectContent className="bg-white">
+            <SelectItem value="title-asc">Title A-Z</SelectItem>
+            <SelectItem value="title-desc">Title Z-A</SelectItem>
+            <SelectItem value="price-asc">Price low to high</SelectItem>
+            <SelectItem value="price-desc">Price high to low</SelectItem>
+          </SelectContent>
+        </Select>
+        <Button
+          aria-label="Search"
+          className={cn(
+            'h-10 bg-zinc-100 border-0',
+            'rounded-[22px] rounded-tl-none rounded-bl-none cursor-pointer',
+          )}
+        >
+          <i className="fa-solid fa-magnifying-glass"></i>
+        </Button>
+      </form>
     </div>
   )
 }

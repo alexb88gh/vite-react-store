@@ -8,10 +8,9 @@ export const topMenu: { title: string; link: string }[] = [
 ]
 
 export const mainMenu = [
-  { title: 'Home', link: '#' },
-  { title: 'Categories', link: '#' },
-  { title: 'Products', link: '#' },
-  { title: 'Pages', link: '#' },
-  { title: 'Blog', link: '#' },
-  { title: 'Contact Us', link: '#' },
+  { title: 'Home', link: '/' },
+  { title: 'Categories', link: '/categories' },
+  { title: 'Products', link: '/products' },
+  { title: 'Blog', link: '/blog' },
+  { title: 'Contact Us', link: '/contact-us' },
 ]
