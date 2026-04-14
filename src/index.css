@@ -6,3 +6,32 @@
 @import '@fontsource/open-sans/500.css';
 @import '@fontsource/open-sans/600.css';
 @import '@fontsource/open-sans/700.css';
+@import '@fontsource/poppins/400.css';
+@import '@fontsource/poppins/500.css';
+@import '@fontsource/poppins/600.css';
+@import '@fontsource/poppins/700.css';
+
+:root {
+  --bg: #fff;
+  --sans: 'Open Sans', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: 'Open Sans', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --poppins: 'Poppins', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+  --background: oklch(1 0 0);
+
+  body {
+    margin: 0;
+  }
+
+  @theme inline {
+    --font-heading: var(--font-sans);
+    --font-sans: 'Open Sans', sans-serif;
+    --font-poppins: 'Poppins', sans-serif;
+  }
+}
+
+@layer base {
+  html {
+    @apply font-sans;
+  }
+}
