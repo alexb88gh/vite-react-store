@@ -11,11 +11,11 @@ import { mainMenu, topMenu } from './menus'
 
 export const Header = () => {
   return (
-    <header className="border-b">
+    <header>
       <Container>
         <div className="flex justify-between items-center py-2">
           <div>
-            <span className="font-poppins uppercase text-[11px] text-neutral-500 font-semibold">
+            <span className="uppercase text-[11px] text-neutral-500 font-semibold">
               FREE Returns. Standard Shipping Orders $99+
             </span>
           </div>

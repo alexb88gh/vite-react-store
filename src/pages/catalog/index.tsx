@@ -1,4 +1,5 @@
 import { useGetProductList } from '@/entities/product/hooks/use-get-list'
+import { HomeSlider } from '@/features/home-slider'
 import { ProductCard } from '@/features/product-card'
 import { Container } from '@/shared/ui/container'
 import { Input } from '@/shared/ui/input'
@@ -37,34 +38,37 @@ export const CatalogPage = () => {
   if (error) return <div>Error</div>
 
   return (
-    <Container>
-      <div className="space-y-4">
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-[1fr_220px]">
-          <Input
-            value={search}
-            onChange={(event) => setSearch(event.target.value)}
-            placeholder="Search product by title..."
-          />
-          <Select value={sortBy} onValueChange={(value) => setSortBy(value as typeof sortBy)}>
-            <SelectTrigger>
-              <SelectValue placeholder="Sort by" />
-            </SelectTrigger>
-            <SelectContent className="bg-white">
-              <SelectItem value="title-asc">Title A-Z</SelectItem>
-              <SelectItem value="title-desc">Title Z-A</SelectItem>
-              <SelectItem value="price-asc">Price low to high</SelectItem>
-              <SelectItem value="price-desc">Price high to low</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
+    <div>
+      <HomeSlider />
+      <Container>
+        <div className="space-y-4">
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-[1fr_220px]">
+            <Input
+              value={search}
+              onChange={(event) => setSearch(event.target.value)}
+              placeholder="Search product by title..."
+            />
+            <Select value={sortBy} onValueChange={(value) => setSortBy(value as typeof sortBy)}>
+              <SelectTrigger>
+                <SelectValue placeholder="Sort by" />
+              </SelectTrigger>
+              <SelectContent className="bg-white">
+                <SelectItem value="title-asc">Title A-Z</SelectItem>
+                <SelectItem value="title-desc">Title Z-A</SelectItem>
+                <SelectItem value="price-asc">Price low to high</SelectItem>
+                <SelectItem value="price-desc">Price high to low</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+          {!products.length && <div className="text-sm text-gray-500">No products found.</div>}
         </div>
-        {!products.length && <div className="text-sm text-gray-500">No products found.</div>}
-      </div>
-    </Container>
+      </Container>
+    </div>
   )
 }

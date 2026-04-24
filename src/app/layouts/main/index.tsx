@@ -6,7 +6,7 @@ export const MainLayout = () => {
     <div className="min-h-screen">
       <Header />
 
-      <main className="p-4">
+      <main>
         <Outlet />
       </main>
     </div>

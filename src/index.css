@@ -10,6 +10,10 @@
 @import '@fontsource/poppins/500.css';
 @import '@fontsource/poppins/600.css';
 @import '@fontsource/poppins/700.css';
+@import 'segoe-fonts/segoe-fonts.css';
+@import 'swiper/css';
+@import 'swiper/css/effect-fade';
+@import 'swiper/css/navigation';
 
 :root {
   --bg: #fff;
@@ -18,6 +22,10 @@
   --poppins: 'Poppins', system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
   --background: oklch(1 0 0);
+  --swiper-navigation-size: 21px;
+  --swiper-navigation-height: 21px;
+  --swiper-navigation-color: #222529;
+  --swiper-navigation-sides-offset: 10px;
 
   body {
     margin: 0;
@@ -27,6 +35,7 @@
     --font-heading: var(--font-sans);
     --font-sans: 'Open Sans', sans-serif;
     --font-poppins: 'Poppins', sans-serif;
+    --font-segoe: 'Segoe Script', cursive;
   }
 }
 
