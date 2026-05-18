@@ -92,7 +92,7 @@ export const Footer = () => {
             </h3>
             <ul>
               {servicesMenu.map((item) => (
-                <li className="mb-1.25">
+                <li key={item.name} className="mb-1.25">
                   <Link
                     key={item.name}
                     to={item.link}
