@@ -1,6 +1,8 @@
 import type { FallbackProps } from 'react-error-boundary'
 import { getErrorMessage } from 'react-error-boundary'
 
+import WarningIcon from '@/assets/svg/warning-icon.svg?react'
+
 import { isDev } from '@/shared/config/mode'
 
 export const RootErrorFallback = ({ error, resetErrorBoundary }: FallbackProps) => {
@@ -14,7 +16,9 @@ export const RootErrorFallback = ({ error, resetErrorBoundary }: FallbackProps) 
       <div className="w-full max-w-lg rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
         <div className="mb-6 flex justify-center">
           <div className="flex h-16 w-16 items-center justify-center rounded-full bg-red-100">
-            <span className="text-3xl">⚠️</span>
+            <span className="text-3xl">
+              <WarningIcon className="h-7.5 w-7.5 fill-amber-500" />
+            </span>
           </div>
         </div>
 
@@ -27,12 +31,12 @@ export const RootErrorFallback = ({ error, resetErrorBoundary }: FallbackProps) 
 
           {isDev && (
             <div className="mb-6 overflow-auto rounded-lg bg-slate-100 p-4 text-left">
-              <pre className="text-sm whitespace-pre-wrap break-words text-red-600">
+              <pre className="text-sm whitespace-pre-wrap wrap-break-words text-red-600">
                 {getErrorMessage(error)}
               </pre>
 
               {error instanceof Error && error.stack && (
-                <pre className="mt-3 text-xs whitespace-pre-wrap break-words text-slate-500">
+                <pre className="mt-3 text-xs whitespace-pre-wrap wrap-break-words text-slate-500">
                   {error.stack}
                 </pre>
               )}
